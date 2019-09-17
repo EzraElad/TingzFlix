@@ -1,33 +1,120 @@
-.App {
-  text-align: center;
+body{
+  background-color: black;
+  color:whitesmoke;
+  font-family: 'Poppins', sans-serif;
+}
+p{
+  font-weight: bold;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.movie-title{
+  position: absolute;
+  top: 50px;
+  right: 80px;
+  color :crimson;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.movie-box{
+  box-shadow: 10px 5px 5px grey;
+}
+.home-img{
+  border-radius: 20px;
+  height: 350px;
+  width: 350px;
+}
+.tingz-header{
+  font-size: 4rem;
+  background: -webkit-linear-gradient(#DB0914, rgb(78, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.back-link{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  color: #B2060E;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* Responsive */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width:1300px) {
+  .img{
+    width: 400px;
+    height: 400px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width:750px) {
+  .img{
+    margin-top:100px;
+    margin-left: 20%;
+    bottom: 0%;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
+/* Image Animation @@@@@@@@@@@@@@@@@@ */
+
+.img-container {
+  position: fixed;
+  top: 15%;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+ 
+.img-container img {
+  max-width: 100%;
+  heigth: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  animation: pic 2s;
+  animation-fill-mode: forwards;
+}
+ 
+.img-container .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #DB0914;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  animation: overlay 2s;
+}
+ 
+@keyframes pic {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  51% { opacity: 1; }
+  100% { opacity: 1;transform: translate(-50%, -50%) scale(1); }
+}
+ 
+@keyframes overlay {
+  0% {
+    transform: scaleX(0);
+    transform-origin: 0% 50%;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+  51% {
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
   }
 }
